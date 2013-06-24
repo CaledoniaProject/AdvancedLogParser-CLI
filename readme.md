@@ -1,13 +1,15 @@
 ## Advanced Log Parser
 Read and understand logs with SQL phrase.
 
-## Example:
+## Example usage
+
+Insert the first two fields from /etc/passwd into table 'parser'
 
 <pre>
-    ./logparser.pl --regex '^(?<name>[^:]+):(?<password>[^:]+)' \
-       --file   '/etc/passwd' \
-       --report '/run/shm/logparser-cmd.db' \
-       --table  'parser'
+./logparser.pl --regex '^(?<name>[^:]+):(?<password>[^:]+)' \
+               --file   '/etc/passwd' \
+               --report '/run/shm/logparser-cmd.db' \
+               --table  'parser'
 </pre>
 
 ## Example output
