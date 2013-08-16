@@ -39,7 +39,7 @@ sub parse_line
         if (! $table_created)
         {
             $table_created = 1;
-            $dbh->prepare ("CREATE TABLE IF NOT EXISTS parser (" . join (" text, ", @keys) . " text)")->execute ();
+            $dbh->prepare ("CREATE TABLE IF NOT EXISTS " . $opts{table} . " (" . join (" text, ", @keys) . " text)")->execute ();
         }
 
         $dbh->prepare ("INSERT OR IGNORE INTO " . $opts{table} . "(" . join (",", @keys) .")" .
