@@ -1,5 +1,5 @@
 ## Advanced Log Parser
-Read and understand logs with SQL phrase.
+Convert plain-text logs into SQL database.
 
 ## Quick start
 
@@ -15,7 +15,7 @@ Insert the first two fields from /etc/passwd into a table called 'parser',
 
 ## Perform database query
 
-List first entry from generated table,
+List the first entry of the parser table,
 
 <pre>
 %> echo 'select * from parser limit 1;' | sqlite3 -batch /run/shm/logparser-cmd.db 
