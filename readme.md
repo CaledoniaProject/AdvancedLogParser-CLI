@@ -3,7 +3,7 @@ Convert plain-text logs into SQL database.
 
 ## Quick start
 
-Insert the first two fields from /etc/passwd into a table called 'parser',
+Insert the first two fields from /etc/passwd into a table named 'parser',
 
 <pre>
 ./logparser.pl \
@@ -15,7 +15,7 @@ Insert the first two fields from /etc/passwd into a table called 'parser',
 
 ## Perform database query
 
-List the first entry of the parser table,
+List the first entry of the 'parser' table,
 
 <pre>
 %> echo 'select * from parser limit 1;' | sqlite3 -batch /run/shm/logparser-cmd.db 
