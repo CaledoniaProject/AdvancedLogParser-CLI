@@ -1,9 +1,9 @@
 ## Advanced Log Parser
 Read and understand logs with SQL phrase.
 
-## Example usage
+## Quick start
 
-Insert the first two fields from /etc/passwd into table 'parser',
+Insert the first two fields from /etc/passwd into a table called 'parser',
 
 <pre>
 ./logparser.pl \
@@ -13,7 +13,7 @@ Insert the first two fields from /etc/passwd into table 'parser',
         --table  'parser'
 </pre>
 
-## Example output
+## Perform database query
 
 List first entry from generated table,
 

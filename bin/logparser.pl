@@ -13,7 +13,7 @@ use autodie qw/open/;
 
 binmode(STDOUT, ':encoding(utf8)');
 
-my $fh = \*STDIN;
+my $fh   = \*STDIN;
 my %opts = (
     'regex'    => '^(?<name>[^:]+):(?<password>[^:]+)',
     'file'     => '/etc/passwd',
@@ -39,10 +39,12 @@ sub parse_line
         if (! $table_created)
         {
             $table_created = 1;
-            $dbh->prepare ("CREATE TABLE IF NOT EXISTS " . $opts{table} . " (" . join (" text, ", @keys) . " text)")->execute ();
+            $dbh->prepare ("CREATE TABLE IF NOT EXISTS " . $opts{table} . 
+                " (" . join (" text, ", @keys) . " text)")->execute ();
         }
 
-        $dbh->prepare ("INSERT OR IGNORE INTO " . $opts{table} . "(" . join (",", @keys) .")" .
+        $dbh->prepare ("INSERT OR IGNORE INTO " . $opts{table} . 
+            "(" . join (",", @keys) .")" .
             " values (" . "?, " x (scalar @keys - 1). "?)")->execute (@values);
 
         return 1;
